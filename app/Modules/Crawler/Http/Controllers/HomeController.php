@@ -64,4 +64,15 @@ class HomeController extends Controller
         curl_close($ch);
         return $result;
     }
+
+    /**
+     * 格式化html编码
+     * @param string $str
+     * @return string
+     */
+    public function getHtml(string $str = '')
+    {
+        $html = mb_convert_encoding($str,'UTF-8',['UTF-8','GBK','ASCII']);
+        return $html;
+    }
 }

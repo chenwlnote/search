@@ -2,6 +2,7 @@
 
 namespace App\Modules\Crawler\Http\Controllers;
 
+use App\Services\PatternService;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -16,9 +17,8 @@ class Dy2018Controller extends HomeController
     {
         $str = $this->curl_get($this->host);
 
-       $html =  $this->getHtml($str);
-
-        echo $html;
-
+        $html =  $this->getHtml($str);
+        preg_match_all(PatternService::$aTag,$html,$matches);
+        var_dump($matches);
     }
 }

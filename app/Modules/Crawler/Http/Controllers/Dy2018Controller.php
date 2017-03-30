@@ -14,7 +14,11 @@ class Dy2018Controller extends HomeController
 
     public function index()
     {
-        $html = $this->curl_get($this->host);
+        $str = $this->curl_get($this->host);
+
+       $html =  $this->getHtml($str);
+
         echo $html;
+
     }
 }

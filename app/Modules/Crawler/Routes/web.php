@@ -19,4 +19,8 @@ Route::group(['prefix' => 'crawler'], function () {
 
     });
 
+    Route::group(['prefix' => 'laravist'], function (){
+        Route::get('/','LaravistController@index');
+    });
+
 });

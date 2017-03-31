@@ -18,7 +18,6 @@ class Dy2018Controller extends HomeController
         $str = $this->curl_get($this->host);
 
         $html =  $this->getHtml($str);
-        preg_match_all(PatternService::$aTag,$html,$matches);
-        var_dump($matches);
+        preg_match_all(PatternService::$aHref,$html,$matches);
     }
 }

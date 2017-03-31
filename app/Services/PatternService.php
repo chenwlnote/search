@@ -22,7 +22,7 @@ class PatternService
      * HTML a标签
      * @var string
      */
-    public static $aTag = '/<a\s[^>]*href=([\"\']??)([^\"\' >]*?)\\1[^>]*>(.*)<\/a>/siU';
+    public static $aTag = '/<a\s[^>]*href=([\"\']??)([^\"\' >]*?)[^>]*>(.*)<\/a>/siU';
 
 
     /**
@@ -65,8 +65,29 @@ class PatternService
     public static $identity = '/\d{17}[\d|x]|\d{15}/';
 
 
+    /**
+     * HTML a标签 href属性
+     * @var string
+     */
+    public static $aHref = '/href\s*=\s*(?:"([^"]*)"|\'([^\']*)\'|([^"\'>\s]+))/';
 
 
+    /**
+     * HTTP HTTPS 请求
+     * @var string
+     */
+    public static $http = '/https?:[\/]{2}[a-z]+[.]{1}[a-z\d\-]+[.]{1}[a-z\d]*[\/]*[A-Za-z\d]*[\/]*[A-Za-z\d]*/';
+
+
+    /**
+     * 通过class 获取A标签
+     * @param string $className
+     * @return string
+     */
+    public static function getATagByClass(string $className = "")
+    {
+        return '/<a.*class="'.$className.'".*>.*<\/a>/';
+    }
 
 
     

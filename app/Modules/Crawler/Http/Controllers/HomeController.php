@@ -67,12 +67,26 @@ class HomeController extends Controller
 
     /**
      * 格式化html编码
-     * @param string $str
-     * @return string
+     * @param string $url
+     * @return mixed|string
      */
-    public function getHtml(string $str = '')
+    public function getHtml(string $url = "")
     {
+        $str = $this->curl_get($url);
         $html = mb_convert_encoding($str,'UTF-8',['UTF-8','GBK','ASCII']);
         return $html;
+    }
+
+    /**
+     * 获取html dom 结构
+     * @param string $href
+     * @return \simple_html_dom
+     */
+    public function getHtmlDom(string $href = '')
+    {
+        $dom =  new \simple_html_dom();
+        $str = $this->getHtml($href);
+        $dom->load($str);
+        return $dom;
     }
 }

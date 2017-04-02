@@ -15,6 +15,7 @@ class ComposerStaticInitb3e42b59caafaa066c1abd11d8d1592e
         'e7223560d890eab89cda23685e711e2c' => __DIR__ . '/..' . '/psy/psysh/src/Psy/functions.php',
         'f0906e6318348a765ffb6eb24e0d0938' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/helpers.php',
         '58571171fd5812e6e447dce228f52f4d' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Support/helpers.php',
+        '31a7cf013d73a96bec3a5977a94ebccd' => __DIR__ . '/..' . '/shark/simple_html_dom/simple_html_dom.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -3283,6 +3284,8 @@ class ComposerStaticInitb3e42b59caafaa066c1abd11d8d1592e
         'phpDocumentor\\Reflection\\Types\\String_' => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src/Types/String_.php',
         'phpDocumentor\\Reflection\\Types\\This' => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src/Types/This.php',
         'phpDocumentor\\Reflection\\Types\\Void_' => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src/Types/Void_.php',
+        'simple_html_dom' => __DIR__ . '/..' . '/shark/simple_html_dom/simple_html_dom.php',
+        'simple_html_dom_node' => __DIR__ . '/..' . '/shark/simple_html_dom/simple_html_dom.php',
     );
 
     public static function getInitializer(ClassLoader $loader)

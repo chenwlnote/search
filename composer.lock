@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "a9ebb56bae122273ffa77f23746b9351",
+    "content-hash": "6ba1630d231126cdcded048b8211b163",
     "packages": [
         {
             "name": "caffeinated/modules",
@@ -1034,6 +1034,49 @@
                 "uuid"
             ],
             "time": "2017-03-26T20:37:53+00:00"
+        },
+        {
+            "name": "shark/simple_html_dom",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/samacs/simple_html_dom.git",
+                "reference": "b396c8c87a8db9dca98166db262dcee89b6b83b8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://files.phpcomposer.com/files/samacs/simple_html_dom/b396c8c87a8db9dca98166db262dcee89b6b83b8.zip",
+                "reference": "b396c8c87a8db9dca98166db262dcee89b6b83b8",
+                "shasum": ""
+            },
+            "require": {
+                "ext-mbstring": "*",
+                "php": ">=5.2.4"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "simple_html_dom.php"
+                ],
+                "files": [
+                    "simple_html_dom.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "S.C. Chen",
+                    "email": "me578022@gmail.com",
+                    "homepage": "http://simplehtmldom.sourceforge.net/"
+                }
+            ],
+            "description": "Simple HTML DOM package.",
+            "homepage": "http://simplehtmldom.sourceforge.net/",
+            "keywords": [
+                "dom",
+                "php dom"
+            ],
+            "time": "2016-10-28T19:06:55+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -3392,7 +3435,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "shark/simple_html_dom": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {

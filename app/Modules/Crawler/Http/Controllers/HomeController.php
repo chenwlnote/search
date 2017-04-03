@@ -78,14 +78,13 @@ class HomeController extends Controller
     }
 
     /**
-     * 获取html dom 结构
-     * @param string $href
+     * 获取html 结构
+     * @param string $str
      * @return \simple_html_dom
      */
-    public function getHtmlDom(string $href = '')
+    public function getHtmlDom(string $str = '')
     {
         $dom =  new \simple_html_dom();
-        $str = $this->getHtml($href);
         $dom->load($str);
         return $dom;
     }

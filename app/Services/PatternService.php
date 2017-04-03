@@ -89,6 +89,25 @@ class PatternService
         return '/<a.*class="'.$className.'".*>.*<\/a>/';
     }
 
+    /**
+     * 获取span标签
+     * @param string $className
+     * @return string
+     */
+    public static function getSpanTagByClass(string $className = "")
+    {
+        return '/<span.*class="'.$className.'".*>.*<\/span>/';
+    }
+
+    /**
+     * 获取视频ftp 地址
+     * @return string
+     */
+    public static function getFtpLink()
+    {
+        return '/(ftp:\/\/.*?rmvb)|(ftp:\/\/.*?mkv))/';
+    }
+
 
     
 }

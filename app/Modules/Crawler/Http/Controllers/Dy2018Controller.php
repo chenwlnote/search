@@ -51,25 +51,46 @@ class Dy2018Controller extends HomeController
     {
 
         $cl = $this->getCategoryIndex();
-        foreach ($cl as $index=>$value) {
+        foreach ($cl as $index => $value) {
             $page = 1;
-            for (;;) {
+            for (; ;) {
                 if ($page == 1) {
                     $href = $index;
-                }else{
-                    $href = $index.'index_'.$page.'.html';
+                } else {
+                    $href = $index . 'index_' . $page . '.html';
                 }
                 $html = $this->getHtml($href);
-                preg_match_all(PatternService::getATagByClass('ulink'),$html,$aTags);
-                foreach ($aTags[0]??[] as $aTag) {
-                    preg_match(PatternService::$aHref,$aTag,$href);
-                    dd($href);die;
-                }
-                break;
-                $page ++;
-            }
-            break;
-        }
+                preg_match_all(PatternService::getATagByClass('ulink'), $html, $aTags);
+                if (!empty($aTags[0])) {
 
+                    foreach ($aTags[0]??[] as $aTag) {
+                        $data = array();
+
+                        $dom = $this->getHtmlDom($aTag);
+                        $a = $dom->find('a')[0];
+                        $href = $a->href;
+                        $title = $a->title;
+                        $data['title'] = $title;
+                        $url = $this->host . $href;
+                        $html = $this->getHtml($url);
+                        preg_match(PatternService::getFtpLink(), $html, $links);
+
+                        $list = array();
+                        foreach ($links as $link) {
+                            if ( !empty($link) && !in_array($link,$list) ) {
+                                $list[] = $link;
+                            }
+                        }
+                        foreach ($list as $link) {
+                            $data['link'] = $link;
+                            $data['source'] = '电影天堂';
+                            MovieService::doInsert($data);
+                        }
+                    }
+                    $page++;
+                }
+
+            }
+        }
     }
 }

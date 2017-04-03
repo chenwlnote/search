@@ -50,8 +50,10 @@ class Dy2018Controller extends HomeController
     public function index()
     {
 
+        $i = 0;
         $cl = $this->getCategoryIndex();
         foreach ($cl as $index => $value) {
+            $i++;
             $page = 1;
             for (; ;) {
                 if ($page == 1) {
@@ -90,6 +92,9 @@ class Dy2018Controller extends HomeController
                     $page++;
                 }
 
+            }
+            if ($i == 1) {
+                break;
             }
         }
     }

@@ -105,7 +105,7 @@ class PatternService
      */
     public static function getFtpLink()
     {
-        return '/(ftp:\/\/.*?rmvb)|(ftp:\/\/.*?mkv))/';
+        return '/(ftp:\/\/.*?rmvb)|(ftp:\/\/.*?mkv)/';
     }
 
 

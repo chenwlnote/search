@@ -52,4 +52,8 @@ $app->singleton(
 |
 */
 
+$environment = env('APP_ENV') ? '.'.env('APP_ENV') : '.production';
+
+$app->loadEnvironmentFrom('.env'.$environment);
+
 return $app;

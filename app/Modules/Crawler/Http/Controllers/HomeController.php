@@ -10,6 +10,13 @@ use App\Http\Controllers\Controller;
 class HomeController extends Controller
 {
 
+    protected $_request = null;
+
+    public function __construct(Request $request)
+    {
+        $this->_request = $request;
+    }
+
     /**
      * curl post请求
      * @param string $url
